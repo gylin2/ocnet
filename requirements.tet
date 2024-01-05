@@ -1,0 +1,6 @@
+deepspeed==0.9.1
+matplotlib==3.3.4
+numpy==1.19.5
+SoundFile==0.10.3.post1
+torch==1.10.2+cu113
+tqdm==4.64.0
