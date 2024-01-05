@@ -2,20 +2,24 @@
 This repository contains the official implementation of our paper, "One-Class Network with Directed Statistics Pooling for Spoofing Speech Detection".
 
 ## Run the training procedure
-```bash
-python3 train.py -p path_to_your_database -o ./models/output  --gpu 0 --warmup
+Run the `train.py` to train the model on the ASVspoof2019 LA dataset:
+```
+python3 train.py -p path_to_your_database -o ./models/new_path  --gpu 0 --warmup
 ```
 ## Run the test procedure
-```bash
-python3 test.py -p path_to_your_database -m ./models/output --gpu 0 --part eval
+Run the `test.py` to evaluate the pre-trained model on the ASVspoof2019 LA dataset:
+```
+python3 test.py -p path_to_your_database -m ./models/OCNet --gpu 0 --part eval
 ```
 ## Run the cross-dataset procedure
-```bash
-python3 cross_dataset_2021.py -p path_to_your_database -m ./models/output -a LA --gpu 0 --phase eval
+To evaluate the cross-dataset performance on the ASVspoof2021 LA dataset:
+```
+python3 cross_dataset_2021.py -p path_to_your_database -m ./models/OCNet -a LA --gpu 0 --phase eval
 ```
 
-```bash
-python3 cross_dataset_2015.py -p path_to_your_database -m ./models/output --gpu 0 --part eval
+To evaluate the cross-dataset performance on the ASVspoof2015 dataset:
+```
+python3 cross_dataset_2015.py -p path_to_your_database -m ./models/OCNet --gpu 0 --part eval
 ```
 
 
