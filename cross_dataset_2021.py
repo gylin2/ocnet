@@ -108,11 +108,11 @@ if __name__ == "__main__":
 
     # if args.access_type=='LA':
     #     asv_score_file = args.path + 'tar_files/ASVspoof2021_LA_eval/keys/'
-    #     evaluate_tDCF_asvspoof21(os.path.join('./models/OCNet', 'checkpoint_cm_score_2021.txt'),
+    #     evaluate_tDCF_asvspoof21(os.path.join(args.model_dir, 'checkpoint_cm_score_2021.txt'),
     #                                             asv_score_file, False, args.phase)
     
     # if args.access_type=='DF':
-    #     cm_score_file = os.path.join('./models/OCNet', 'checkpoint_cm_score_2021_DF.txt')
+    #     cm_score_file = os.path.join(args.model_dir, 'checkpoint_cm_score_2021_DF.txt')
     #     cm_data = np.genfromtxt(cm_score_file, dtype=str)
     #     cm_sources = cm_data[:, 1]
     #     cm_keys = cm_data[:, 2]
