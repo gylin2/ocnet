@@ -1,6 +1,12 @@
 # OCNet-DSP
 This repository contains the official implementation of our paper, "One-Class Network with Directed Statistics Pooling for Spoofing Speech Detection".
 
+## Requirements
+Installing dependencies:
+```
+pip install -r requirements.txt
+```
+
 ## Run the training procedure
 Run the `train.py` to train the model on the ASVspoof2019 LA dataset:
 ```
