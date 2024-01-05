@@ -2,7 +2,7 @@ import argparse
 import os
 import torch
 import torch.nn as nn
-from torchsummary import summary
+# from torchsummary import summary
 from model import RawNet
 from deepspeed.profiling.flops_profiler import get_model_profile
 
@@ -53,10 +53,10 @@ if __name__ == "__main__":
     else:
         model = model.to(device)
     
-    summary(model, (args.feat_len,))
+    # summary(model, (args.feat_len,))
     
-    # flops, macs, params = get_model_profile(model, (1,args.feat_len,), as_string=False)
-    # print('FLOPs: {}'.format(flops))
-    # print('Parameters: {}'.format(params))
-    # print('FLOPs: %.2fG' % (flops / 1e9))
-    # print('Parameters: %.2fM' % (params / 1e6))
+    flops, macs, params = get_model_profile(model, (1,args.feat_len,), as_string=False)
+    print('FLOPs: {}'.format(flops))
+    print('Parameters: {}'.format(params))
+    print('FLOPs: %.2fG' % (flops / 1e9))
+    print('Parameters: %.2fM' % (params / 1e6))
