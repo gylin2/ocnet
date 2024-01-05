@@ -1,0 +1,16 @@
+{"access_type":"LA"
+"batch_size":32
+"beta_1":0.9
+"beta_2":0.999
+"eps":1e-08
+"feat_len":128000
+"gpu":"5"
+"loss":"tocsoftmax"
+"lr":0.0003
+"num_epochs":100
+"num_workers":8
+"out_fold":"./models/OCNet"
+"padding":"repeat"
+"path_to_protocol":"**/ASVspoof2019/LA/ASVspoof2019_LA_cm_protocols/"
+"seed":0
+"warmup":true}
