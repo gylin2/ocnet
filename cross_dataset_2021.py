@@ -107,7 +107,7 @@ if __name__ == "__main__":
     test(args.model_dir, args.device)
 
     # if args.access_type=='LA':
-    #     asv_score_file = args.path + 'tar_files/ASVspoof2021_LA_eval/keys/'
+    #     asv_score_file = args.path + '/tar_files/ASVspoof2021_LA_eval/keys/'
     #     evaluate_tDCF_asvspoof21(os.path.join(args.model_dir, 'checkpoint_cm_score_2021.txt'),
     #                                             asv_score_file, False, args.phase)
     
