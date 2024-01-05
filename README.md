@@ -28,6 +28,11 @@ To evaluate the cross-dataset performance on the ASVspoof2015 dataset:
 python3 cross_dataset_2015.py -p path_to_your_database -m ./models/OCNet --gpu 0 --part eval
 ```
 
+## Print the model parameters
+You can run the 'model_param.py' to print the structure and parameters of the given model:
+```
+pyhton3 model_param.py --gpu 0
+```
 
 ## Citation
 If you find this work useful in your research, please consider citing this paper.
