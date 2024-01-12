@@ -1,5 +1,5 @@
 # OCNet-DSP
-This repository contains the official implementation of our paper, "One-Class Network with Directed Statistics Pooling for Spoofing Speech Detection".
+This repository contains the official implementation of our paper, "One-Class Network with Directed Statistics Pooling for Spoofing Speech Detection". [[Paper link](https://ieeexplore.ieee.org/document/10387499)]
 
 ## Requirements
 Installing dependencies:
