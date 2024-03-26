@@ -80,42 +80,42 @@ def compute_eer_and_tdcf(cm_score_file, path_to_database):
     print('   min-tDCF       = {:8.5f}'.format(min_tDCF))
 
 
-    # # Visualize ASV scores and CM scores
-    # plt.figure()
-    # ax = plt.subplot(121)
-    # plt.hist(tar_asv, histtype='step', density=True, bins=50, label='Target')
-    # plt.hist(non_asv, histtype='step', density=True, bins=50, label='Nontarget')
-    # plt.hist(spoof_asv, histtype='step', density=True, bins=50, label='Spoof')
-    # plt.plot(asv_threshold, 0, 'o', markersize=10, mfc='none', mew=2, clip_on=False, label='EER threshold')
-    # plt.legend()
-    # plt.xlabel('ASV score')
+    # Visualize ASV scores and CM scores
+    plt.figure()
+    ax = plt.subplot(121)
+    plt.hist(tar_asv, histtype='step', density=True, bins=50, label='Target')
+    plt.hist(non_asv, histtype='step', density=True, bins=50, label='Nontarget')
+    plt.hist(spoof_asv, histtype='step', density=True, bins=50, label='Spoof')
+    plt.plot(asv_threshold, 0, 'o', markersize=10, mfc='none', mew=2, clip_on=False, label='EER threshold')
+    plt.legend()
+    plt.xlabel('ASV score')
+    plt.ylabel('Density')
+    plt.title('ASV score histogram')
+
+    ax = plt.subplot(122)
+    plt.hist(bona_cm, histtype='step', density=True, bins=50, label='Bona fide')
+    plt.hist(spoof_cm, histtype='step', density=True, bins=50, label='Spoof')
+    plt.legend()
+    plt.xlabel('CM score')
     # plt.ylabel('Density')
-    # plt.title('ASV score histogram')
-
-    # ax = plt.subplot(122)
-    # plt.hist(bona_cm, histtype='step', density=True, bins=50, label='Bona fide')
-    # plt.hist(spoof_cm, histtype='step', density=True, bins=50, label='Spoof')
-    # plt.legend()
-    # plt.xlabel('CM score')
-    # # plt.ylabel('Density')
-    # plt.title('CM score histogram')
-    # plt.savefig(cm_score_file[:-4]+'1.png')
+    plt.title('CM score histogram')
+    plt.savefig(cm_score_file[:-4]+'1.png')
 
 
-    # # Plot t-DCF as function of the CM threshold.
-    # plt.figure()
-    # plt.plot(CM_thresholds, tDCF_curve)
-    # plt.plot(CM_thresholds[min_tDCF_index], min_tDCF, 'o', markersize=10, mfc='none', mew=2)
-    # plt.xlabel('CM threshold index (operating point)')
-    # plt.ylabel('Norm t-DCF')
-    # plt.title('Normalized tandem t-DCF')
-    # plt.plot([np.min(CM_thresholds), np.max(CM_thresholds)], [1, 1], '--', color='black')
-    # plt.legend(('t-DCF', 'min t-DCF ({:.5f})'.format(min_tDCF), 'Arbitrarily bad CM (Norm t-DCF=1)'))
-    # plt.xlim([np.min(CM_thresholds), np.max(CM_thresholds)])
-    # plt.ylim([0, 1.5])
-    # plt.savefig(cm_score_file[:-4]+'2.png')
+    # Plot t-DCF as function of the CM threshold.
+    plt.figure()
+    plt.plot(CM_thresholds, tDCF_curve)
+    plt.plot(CM_thresholds[min_tDCF_index], min_tDCF, 'o', markersize=10, mfc='none', mew=2)
+    plt.xlabel('CM threshold index (operating point)')
+    plt.ylabel('Norm t-DCF')
+    plt.title('Normalized tandem t-DCF')
+    plt.plot([np.min(CM_thresholds), np.max(CM_thresholds)], [1, 1], '--', color='black')
+    plt.legend(('t-DCF', 'min t-DCF ({:.5f})'.format(min_tDCF), 'Arbitrarily bad CM (Norm t-DCF=1)'))
+    plt.xlim([np.min(CM_thresholds), np.max(CM_thresholds)])
+    plt.ylim([0, 1.5])
+    plt.savefig(cm_score_file[:-4]+'2.png')
 
-    # plt.show()
+    plt.show()
 
     return min(eer_cm, other_eer_cm), min_tDCF
 
